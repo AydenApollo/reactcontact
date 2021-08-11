@@ -6,6 +6,9 @@ import Typography from '@material-ui/core/Typography';
 import {BrowserRouter, Route, Link, Switch} from 'react-router-dom';
 
 import Contacts from './contacts.js'
+import AddContact from './addContacts.js'
+import DeleteContact from './deleteContacts.js'
+
 import store from './store.js'
 import { Provider } from 'react-redux';
 
@@ -33,7 +36,7 @@ function App() {
         <Switch>
           <Route exact path='/'component={Contacts}/>
           <Route path='/add' component={AddContact}/>
-          <Route path='/delete/:key' component={DeletContact}/>
+          <Route path='/delete/:key' component={DeleteContact}/>
           <Route component={NoMatch}/>
         </Switch>
         </div>
