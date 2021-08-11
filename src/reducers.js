@@ -2,9 +2,9 @@ import deepcopy from 'deepcopy';
 
 var initialState = {
     initial_contacts:[
-    {name: 'BigBoy', city: 'Gastrogasm', state: 'Texas'},
-    {name: 'BeastyBaddie', city: 'PantryRaiders', state: 'North Dakota'},
-    {name: 'HungryHippo', city: 'SoggyDough', state: 'Wyoming'}
+    {name: 'Big Boy', city: 'Gastrogasm', state: 'Texas'},
+    {name: 'Beasty Baddie', city: 'Pantry Raiders', state: 'North Dakota'},
+    {name: 'Hungry Hippo', city: 'Soggy Dough', state: 'Wyoming'}
 ]
 };
 export function contacts_reducer (state, action) {

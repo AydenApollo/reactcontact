@@ -12,7 +12,9 @@ class Contacts extends Component {
                 <ul>
                     {this.props.initial_contacts.map((item, index) => {
                         return <li key={index}>
-                            {item.name}
+                            Name: {item.name}<br/>
+                            City: {item.city}<br/>
+                            State: {item.state}
                         </li>
                     })}
                 </ul>
