@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class AddContact extends Component {
+class Contacts extends Component {
     update_state(event) {
         this.props.updateContact(event.target.value)
     }
