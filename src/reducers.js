@@ -21,6 +21,10 @@ export function contacts_reducer (state, action) {
         new_contact_state.initial_contacts.push({state: action.data.state})
         new_contact_state.initial_contacts.push({zip: action.data.zip})
     }
+    let delete_contact_state = deepcopy(state)
+    if (action.type === 'DELETE_FROM_LIST') {
+        
+    }
     return new_contact_state
 }
 

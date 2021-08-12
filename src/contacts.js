@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 import { Button } from '@material-ui/core';
+import DeleteRoundedIcon from '@material-ui/icons/DeleteRounded';
+
 
 class Contacts extends Component {
     constructor(props) {
@@ -17,6 +19,7 @@ class Contacts extends Component {
                             Name: {item.name}<br/>
                             City: {item.city}<br/>
                             State: {item.state}
+                            <button type="button" onClick={(e) => this.deleteContact(e, index)}>Delete</button>
                         </li>
                     })}
                 </ul>

@@ -5,9 +5,9 @@ export function add_contact (data) {
     }
 }
 
-export function delete_contact (data) {
+export function delete_contact (key) {
     return {
         type: 'DELETE_FROM_LIST',
-        data: data
+        data: key
     }
 }
