@@ -14,23 +14,28 @@ import TextField from '@material-ui/core/TextField';
 class AddContact extends Component {
     constructor(props) {
         super(props);
-        this.state = {Contact: ''}
+        this.state = {item: ''}
     }
     handleSubmit(event) {
         event.preventDefault();
+        this.props.add_contact({})
+        this.setState({item: ''})
+    }
+    updateContact(event) {
+        this.setState({item: event.target.value})
     }
     render() {
         return (
             <form onSubmit={(e) => this.handleSubmit(e) }>
                 <Card>
                 <CardContent> 
-                    <TextField label="Contact Name"/>
-                    <TextField label="Contact Email"/>
-                    <TextField label="Contact Phone Number"/>
-                    <TextField label="Contact Address"/>
-                    <TextField label="Contact City"/>
-                    <TextField label="Contact State"/>
-                    <TextField label="Contact Zip Code"/>
+                    <TextField label="Contact Name" value={this.state.item} onChange={(e) => this.updateContact(e)}/>
+                    <TextField label="Contact Email" value={this.state.item} onChange={(e) => this.updateContact(e)}/>
+                    <TextField label="Contact Phone Number" value={this.state.item} onChange={(e) => this.updateContact(e)}/>
+                    <TextField label="Contact Address" value={this.state.item} onChange={(e) => this.updateContact(e)}/>
+                    <TextField label="Contact City" value={this.state.item} onChange={(e) => this.updateContact(e)}/>
+                    <TextField label="Contact State" value={this.state.item} onChange={(e) => this.updateContact(e)}/>
+                    <TextField label="Contact Zip Code" value={this.state.item} onChange={(e) => this.updateContact(e)}/>
                 </CardContent>
                 <CardActions>
                     <Button type="submit">Complete Contact</Button>
