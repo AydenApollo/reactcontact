@@ -12,7 +12,7 @@ export function contacts_reducer (state, action) {
         return initialState
     }
     let new_contact_state = deepcopy(state);
-    if (actoin.type === 'ADD_TO_LIST') {
+    if (action.type === 'ADD_TO_LIST') {
         new_contact_state.initial_contacts.push({name: action.data.name})
         new_contact_state.initial_contacts.push({email: action.data.email})
         new_contact_state.initial_contacts.push({phone: action.data.phone})
@@ -21,6 +21,7 @@ export function contacts_reducer (state, action) {
         new_contact_state.initial_contacts.push({state: action.data.state})
         new_contact_state.initial_contacts.push({zip: action.data.zip})
     }
+    return new_contact_state
 }
 
 

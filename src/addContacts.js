@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {add_contact} from './actions.js';
 
-import { Button } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -18,11 +17,15 @@ class AddContact extends Component {
     }
     handleSubmit(event) {
         event.preventDefault();
-        this.props.add_contact({})
+        this.props.add_contact({name: this.state.item})
         this.setState({item: ''})
+        alert('Contact Added')
     }
     updateContact(event) {
         this.setState({item: event.target.value})
+    }
+    return_to_home(event) {
+        this.props.history.push('/')
     }
     render() {
         return (
@@ -38,7 +41,8 @@ class AddContact extends Component {
                     <TextField label="Contact Zip Code" value={this.state.item} onChange={(e) => this.updateContact(e)}/>
                 </CardContent>
                 <CardActions>
-                    <Button type="submit">Complete Contact</Button>
+                    <Button type="submit" >Complete Contact</Button>
+                    <Button type="button" onClick={(e) => this.return_to_home(e)}>Return Home</Button>
                 </CardActions>
                 </Card> 
             </form>
