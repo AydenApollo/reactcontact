@@ -1,4 +1,4 @@
-export function addNewContact (data) {
+export function add_contact (data) {
     return {
         type: 'ADD_TO_LIST',
         data: data

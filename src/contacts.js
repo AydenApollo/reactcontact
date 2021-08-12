@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
+import { Button } from '@material-ui/core';
 
 class Contacts extends Component {
     constructor(props) {
@@ -18,6 +20,9 @@ class Contacts extends Component {
                         </li>
                     })}
                 </ul>
+                <div>
+                    <Button component={Link} to='/add'>Add Contact</Button>
+                </div>
             </div>
         );
     }
