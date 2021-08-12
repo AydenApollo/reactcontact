@@ -10,6 +10,10 @@ class Contacts extends Component {
         super(props)
         console.log(props)
     }
+    deleteContact(event, index) {
+        event.preventDefault();
+        this.props.deleteContact(index)
+    }
     render() {
         return (
             <div>
