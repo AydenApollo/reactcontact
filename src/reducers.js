@@ -8,23 +8,20 @@ var initialState = {
 ]
 };
 export function contacts_reducer (state, action) {
+    console.log(action)
     if (state === undefined) {
         return initialState
     }
     let new_contact_state = deepcopy(state);
     if (action.type === 'ADD_TO_LIST') {
-        new_contact_state.initial_contacts.push({name: action.data.name})
-        new_contact_state.initial_contacts.push({email: action.data.email})
-        new_contact_state.initial_contacts.push({phone: action.data.phone})
-        new_contact_state.initial_contacts.push({address: action.data.address})
-        new_contact_state.initial_contacts.push({city: action.data.city})
-        new_contact_state.initial_contacts.push({state: action.data.state})
-        new_contact_state.initial_contacts.push({zip: action.data.zip})
+        new_contact_state.initial_contacts.push(action.data)
+       
     }
-    let delete_contact_state = deepcopy(state)
+    let delete_Contact = deepcopy(state)
     if (action.type === 'DELETE_FROM_LIST') {
-        
+        return delete_Contact
     }
+    console.log(new_contact_state)
     return new_contact_state
 }
 

@@ -1,13 +1,14 @@
 export function add_contact (data) {
+    console.log('should add contact', data)
     return {
         type: 'ADD_TO_LIST',
         data: data
     }
 }
 
-export function delete_contact (key) {
+export function deleteContact (key) {
     return {
         type: 'DELETE_FROM_LIST',
-        data: key
+        key: key
     }
 }

@@ -5,6 +5,9 @@ import { Button } from '@material-ui/core';
 import DeleteRoundedIcon from '@material-ui/icons/DeleteRounded';
 
 
+
+
+
 class Contacts extends Component {
     constructor(props) {
         super(props)
@@ -13,6 +16,7 @@ class Contacts extends Component {
     deleteContact(event, index) {
         event.preventDefault();
         this.props.deleteContact(index)
+        
     }
     render() {
         return (
@@ -42,4 +46,6 @@ function mapStateToProps(state) {
 }
 
 var ConnectedContactList = connect(mapStateToProps)(Contacts)
+
+
 export default ConnectedContactList;
